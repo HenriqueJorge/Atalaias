@@ -1,0 +1,8 @@
+:local(body) {
+    background-image: url("../assets/logo.png");
+    background-repeat: no-repeat;   
+    background-position: center;
+    margin-bottom: 50%;
+    background-attachment: fixed;
+
+}
