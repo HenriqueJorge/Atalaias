@@ -1,29 +1,20 @@
 import React, { Component } from 'react';
 import Barra from './Navbar'
-import Repertorio from './ListaDeMusicas.js'
-import {Container,Col,Row} from 'react-bootstrap';
-import Iframe from 'react-iframe'
-
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import ListaDeMusicas from './ListaDeMusicas.js'
+import Atalaia from './Atalaia.js'
 
 class App extends Component {
   render() {
     return (
       <>
-      <Barra/>
-      <Repertorio/>
-      <Container>
-        <Row>
-            <Col xl={3}>
-                    <Container>
-                      <div>
-                          <Iframe url='https://www.youtube.com/embed/E7qEIwksIGs' width = " 450px " height = " 450px " display = " inicial " allowFullScreen/>
-                     </div>
-                     
-                    </Container>
-                    <h2>teste</h2>
-            </Col>
-        </Row>
-        </Container>
+      <Barra/> 
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={Atalaia} />
+          <Route path="/musicas" exact component={ListaDeMusicas}/>
+        </Switch>
+      </BrowserRouter>
       </>
     );
   }
